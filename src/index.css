@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-sans antialiased;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Hide scrollbars on horizontal swipe rails while keeping scroll */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-5 sm:px-8;
+  }
+
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-luxe text-gold font-medium;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-7 py-3.5
+      text-[13px] font-medium uppercase tracking-[0.15em] text-cream transition-all
+      duration-300 hover:bg-ink active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/30
+      px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.15em] text-charcoal
+      transition-all duration-300 hover:border-charcoal hover:bg-charcoal hover:text-cream
+      active:scale-[0.98];
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0
+      after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
